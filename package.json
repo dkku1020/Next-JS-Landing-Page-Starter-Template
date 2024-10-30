@@ -14,17 +14,22 @@
     "prepare": "husky install"
   },
   "dependencies": {
+    "@fontsource/cardo": "^5.1.0",
+    "@fontsource/roboto-serif": "^5.1.1",
     "classnames": "^2.5.1",
     "next": "^14.1.0",
     "next-seo": "^6.4.0",
+    "nodemailer": "^6.9.15",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-scroll": "^1.9.0",
     "styled-jsx-plugin-postcss": "^4.0.1"
   },
   "devDependencies": {
     "@next/bundle-analyzer": "^14.1.0",
     "@types/node": "^20.11.10",
     "@types/react": "^18.2.48",
+    "@types/react-scroll": "^1.8.10",
     "@typescript-eslint/eslint-plugin": "^6.19.1",
     "@typescript-eslint/parser": "^6.19.1",
     "autoprefixer": "^10.4.17",

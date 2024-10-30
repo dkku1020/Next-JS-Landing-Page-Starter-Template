@@ -1,8 +1,12 @@
 import className from 'classnames';
+import { Link as ScrollLink } from 'react-scroll';
 
 type IButtonProps = {
   xl?: boolean;
   children: string;
+  id?: string;
+  scrollTo?: string;
+  duration?: string;
 };
 
 const Button = (props: IButtonProps) => {
@@ -11,12 +15,12 @@ const Button = (props: IButtonProps) => {
     'btn-xl': props.xl,
     'btn-base': !props.xl,
     'btn-primary': true,
+    'cursor-pointer': true,
   });
 
-  return (
-    <div className={btnClass}>
+  const buttonContent = (
+    <div id={props.id} className={btnClass}>
       {props.children}
-
       <style jsx>
         {`
           .btn {
@@ -32,14 +36,33 @@ const Button = (props: IButtonProps) => {
           }
 
           .btn-primary {
-            @apply text-white bg-primary-500;
+            @apply text-white bg-testBlue-100;
           }
 
           .btn-primary:hover {
-            @apply bg-primary-600;
+            @apply bg-testBlue-200;
           }
         `}
       </style>
+    </div>
+  );
+
+  if (props.scrollTo) {
+    return (
+      <ScrollLink
+        to={props.scrollTo}
+        smooth={true}
+        duration={props.duration}
+        className={btnClass}
+      >
+        {buttonContent}
+      </ScrollLink>
+    );
+  }
+
+  return (
+    <div id={props.id} className={btnClass}>
+      {buttonContent}
     </div>
   );
 };
